@@ -7,9 +7,6 @@ screen.bgcolor("Black")
 screen.title("Pong Game")
 
 paddle = Paddle()
-print("Sampaga Ellejun Elle")
-print("Sampaga Ellejun Elle")
-print("Sampaga Ellejun Elle")
-print("Sampaga Ellejun Elle")
+
 
 screen.exitonclick()
