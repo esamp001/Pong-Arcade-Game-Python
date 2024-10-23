@@ -1,23 +1,18 @@
 from turtle import Turtle
 
+class Paddle(Turtle):
+    def __init__(self, position):
+        super().__init__()
+        self.shape("square")
+        self.color("white")
+        self.shapesize(5, 1)
+        self.penup()
+        self.goto(position)
 
+    def move_up(self):
+        y = self.ycor()
+        self.sety(y + 20)
 
-class Paddle:
-    def __init__(self):
-        self.save_all_segments = []
-        self.create_paddle()
-
-    def create_paddle(self, position):
-        segment = Turtle(shape="square")
-        segment.penup()
-        segment.color("white")
-        segment.goto(x=0, y=0)
-        self.save_all_segments.append(segment)
-
-    def extend(self):
-        self.create_paddle(self.save_all_segments[-1].position())
-
-
-
-
-
+    def move_down(self):
+        y = self.ycor()
+        self.sety(y - 20)
