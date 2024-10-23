@@ -16,6 +16,8 @@ class Paddle:
 
     def extend(self):
         self.create_paddle(self.save_all_segments[-1].position())
+        print("Sampaga Ellejun")
+
 
 
 
