@@ -16,3 +16,4 @@ class Paddle(Turtle):
     def move_down(self):
         y = self.ycor()
         self.sety(y - 20)
+
