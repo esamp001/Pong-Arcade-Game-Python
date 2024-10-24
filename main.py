@@ -14,10 +14,10 @@ rpaddle = Paddle((-350, 0))
 
 
 screen.listen()
-screen.onkey(rpaddle.move_up, "Up")
-screen.onkey(rpaddle.move_down, "Down")
-screen.onkey(lpaddle.move_up, "w")
-screen.onkey(lpaddle.move_down, "s")
+screen.onkey(rpaddle.move_up, "w")
+screen.onkey(rpaddle.move_down, "s")
+screen.onkey(lpaddle.move_up, "Up")
+screen.onkey(lpaddle.move_down, "Down")
 
 ball = Ball()
 
@@ -28,13 +28,16 @@ while game_is_on:
     ball.move_ball()
 
     if ball.ycor() > 280 or ball.ycor() < -280:
-        ball.bounce()
-    elif ball.xcor() > 380 or ball.xcor() < -380:
-        game_is_on = False
+        ball.bounce_y()
 
+    if ball.distance(lpaddle) < 50 and ball.xcor() > 340 or ball.distance(rpaddle) < 50 and ball.xcor() < -340:
+        ball.bounce_x()
 
+    if ball.xcor() > 380:
+        ball.ball_reset()
 
-
+    if ball.xcor() < -380:
+        ball.ball_reset()
 
 
 screen.exitonclick()
